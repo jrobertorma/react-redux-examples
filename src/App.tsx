@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { store } from './store';
 import {PostsList} from './PostsList';
 import {createBrowserRouter, RouterProvider, Outlet, Link} from 'react-router-dom';
+import {AddPostForm} from './AddPostForm';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,9 @@ const router = createBrowserRouter([
             </li>
             <li>
               <Link to={`/posts`}>Posts</Link>
+            </li>
+            <li>
+              <Link to={`/add-post`}>Add post</Link>
             </li>
           </ul>
         </nav>
@@ -38,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "posts",
         element: <PostsList />
+      },
+      {
+        path: "add-post",
+        element: <AddPostForm />
       }
     ]
   },
