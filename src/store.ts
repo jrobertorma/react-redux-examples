@@ -1,12 +1,18 @@
-import { configureStore } from '@reduxjs/toolkit'
+import {combineReducers, configureStore} from '@reduxjs/toolkit'
 import counterReducer from './features/counter/counterSlice'
+import postsReducer from './features/posts/postsSlice'
+
+const reducers = combineReducers({
+  'counter': counterReducer,
+  'posts': postsReducer
+});
 
 /**
  * configureStore is the redux-toolkit way of setting up a redux store without having to do a lot of
  * configurations and code, we can pass middleware (like devTools) as parameters
  * */
 export const store = configureStore({
-  'reducer': { counterReducer },
+  'reducer': { reducers },
   'devTools': true
 })
 
