@@ -6,7 +6,8 @@ import { store } from './store';
 import { PostsList } from './features/posts/PostsList';
 import { createBrowserRouter, RouterProvider, Outlet, Link } from 'react-router-dom';
 import { AddPostForm } from './features/posts/AddPostForm';
-import {SinglePostPage} from "./features/posts/SinglePostPage";
+import { SinglePostPage } from './features/posts/SinglePostPage';
+import { EditPostForm } from './features/posts/EditPostForm';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,9 @@ const router = createBrowserRouter([
             </li>
             <li>
               <Link to={`/posts/:1`}>Post detail id:1</Link>
+            </li>
+            <li>
+              <Link to={`/editPost/:1`}>Post edit id:1</Link>
             </li>
           </ul>
         </nav>
@@ -54,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: "/posts/:postId",
         element: <SinglePostPage />
+      },
+      {
+        path: "/editPost/:1",
+        element: <EditPostForm />
       }
     ]
   },
