@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {useDispatch} from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit'
 
-import { postAdded } from './features/posts/postsSlice';
+import { postAdded } from './postsSlice';
 
 export const AddPostForm = () => {
   const [title, setTitle] = useState('')

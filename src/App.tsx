@@ -3,9 +3,10 @@ import './App.css';
 import { ReduxCounter } from './ReduxCounter';
 import { Provider } from 'react-redux';
 import { store } from './store';
-import {PostsList} from './PostsList';
-import {createBrowserRouter, RouterProvider, Outlet, Link} from 'react-router-dom';
-import {AddPostForm} from './AddPostForm';
+import { PostsList } from './features/posts/PostsList';
+import { createBrowserRouter, RouterProvider, Outlet, Link } from 'react-router-dom';
+import { AddPostForm } from './features/posts/AddPostForm';
+import {SinglePostPage} from "./features/posts/SinglePostPage";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,9 @@ const router = createBrowserRouter([
             </li>
             <li>
               <Link to={`/add-post`}>Add post</Link>
+            </li>
+            <li>
+              <Link to={`/posts/:1`}>Post detail id:1</Link>
             </li>
           </ul>
         </nav>
@@ -46,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: "add-post",
         element: <AddPostForm />
+      },
+      {
+        path: "/posts/:postId",
+        element: <SinglePostPage />
       }
     ]
   },
