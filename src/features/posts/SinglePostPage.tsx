@@ -7,7 +7,7 @@ export const SinglePostPage = () => {
   const postId = '1';
 
   const post = useSelector(
-    (state: RootState)  => state.reducers.posts.find(post => post.id === postId)
+    (state: RootState)  => state.reducers.posts.posts.find(post => post.id === postId)
   )
 
   if (!post) {

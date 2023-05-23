@@ -7,8 +7,8 @@ export const EditPostForm = () => {
   // how to pass parameters to routes is a question for another time, for now will hardcode it :)
   const postId = '1';
 
-  const post = useSelector(
-    (state: RootState)  => state.reducers.posts.find(post => post.id === postId)
+  const post = useSelector (
+    (state: RootState)  => state.reducers.posts.posts.find(post => post.id === postId)
   )
 
   // @ts-ignore
